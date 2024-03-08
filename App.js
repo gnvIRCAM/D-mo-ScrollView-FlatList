@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 function fakeUsers(n_users) {
-  // To generate quickly a large number of "users"
+  // Fonction pour générer un nombre arbitraire de faux "utilisateurs"
   var users = new Array();
   for (i=0; i<=n_users; ++i) {
     users.push({
@@ -14,8 +14,8 @@ function fakeUsers(n_users) {
 }
 
 export default function App() {
-  // const userData = require('./assets/users.json'); // final.json
-  const userData = fakeUsers(2000); // List of fake users
+  const userData = fakeUsers(2000); 
+  // const userData = require('./assets/users.json'); // Décommentez pour avoir une liste de vrais utilisateurs
   const [users, setUsers] = useState(userData);
   const [display, setDisplay] = useState(true); 
   const [textInput, setTextInput] = useState();
@@ -37,7 +37,7 @@ export default function App() {
         {users.map((user) => <Text key={user.username}>
           User {user.username}, Name: {user.first_name}, 
         </Text>)}
-      </ScrollView>} */}
+      </ScrollView>} */} 
       {display && 
       <FlatList
         data={users} // liste de données
